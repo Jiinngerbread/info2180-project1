@@ -5,7 +5,40 @@ body {
 }
 
 .container {
+    /* display: grid;*/
     margin: 0 auto;
     max-width: 960px;
     width: 100%;
+}
+
+header{
+    
+    text-align: center;
+    color:#000000 ;
+    padding: 1px;
+    border: 1px;
+    margin: 1px;
+}
+
+header div {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+div h1 {
+    justify-content: flex-start; 
+}
+
+div  nav {
+    justify-content: flex-end;
+}
+
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style-type: none;
+    float: right;
 }
