@@ -11,17 +11,18 @@ window.onload = function () {
         if (email.length==0) {
             console.log("field is empty");
             document.getElementsByClassName("message").innerText = "Email field must not be empty";
-            //alert('You must fill in your an email address');
-            //displayErrorMessage(email, "You must fill in your email");
+            alert('You must fill in your an email address');
         } else if (!isEmail(email)) {
             console.log("email invalid");
             document.getElementsByClassName("message").innerText = "Incorrect Email format!";
-            // alert('Incorrect format for email.');
-            //displayErrorMessage(email, "Incorrect format for email address.");
+            alert('Incorrect format for email.');
 
         } else {
             console.log("email valid");
             document.getElementsByClassName("message").innerText = "Thank you! Your email address: " + email  + " has been added to our mailing list!";
+            alert("Thank you! Your email address: " + email  + " has been added to our mailing list!");
+
+
         }
 
     });
