@@ -245,3 +245,8 @@ footer {
   color: white;
   padding: 10px;
 }
+
+.newsletter.message {
+  display: inline-block;
+  margin-left: 8px;
+}

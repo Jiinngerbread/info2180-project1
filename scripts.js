@@ -6,21 +6,48 @@ window.onload = function () {
         event.preventDefault();
         console.log("submission button clicked");
         var email = document.getElementById('email').value.trim();
-
+        msg = document.getElementById("message");
+        var child = document.getElementById("temp");
+        console.log(child);
+        
+        
 
         if (email.length==0) {
+            if (child != null) {
+                msg.removeChild(child);
+            }
             console.log("field is empty");
-            document.getElementsByClassName("message").innerText = "Email field must not be empty";
-            alert('You must fill in your an email address');
+            var p = document.createElement("p");
+            var n = document.createTextNode("Email field must not be empty");
+            p.appendChild(n)
+            p.setAttribute("id", "temp");
+            msg.appendChild(p)
+            //alert('You must fill in your an email address');
         } else if (!isEmail(email)) {
+            if (child != null) {
+                msg.removeChild(child);
+            }
             console.log("email invalid");
-            document.getElementsByClassName("message").innerText = "Incorrect Email format!";
-            alert('Incorrect format for email.');
+            var p = document.createElement("p");
+            var n = document.createTextNode("Incorrect Email format!");
+            p.appendChild(n)
+            p.setAttribute("id", "temp");
+            msg.appendChild(p)
+    
+            //alert('Incorrect format for email.');
 
         } else {
+            if (child != null) {
+                msg.removeChild(child);
+            }
             console.log("email valid");
-            document.getElementsByClassName("message").innerText = "Thank you! Your email address: " + email  + " has been added to our mailing list!";
-            alert("Thank you! Your email address: " + email  + " has been added to our mailing list!");
+            console.log("email invalid");
+            var p = document.createElement("p");
+            var n = document.createTextNode("Thank you! Your email address: " + email + " has been added to our mailing list!");
+            p.appendChild(n)
+            p.setAttribute("id", "temp");
+            msg.appendChild(p)
+            //alert("Thank you! Your email address: " + email  + " has been added to our mailing list!");
 
 
         }
@@ -33,16 +60,7 @@ window.onload = function () {
  * Check if a valid email address was entered.
  */
 function isEmail(emailAddress) {
-            return /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|io|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/.test(emailAddress);
-        }
+    return /^[-a-z0-9~!$%^&*_=+}{\'?]+(\.[-a-z0-9~!$%^&*_=+}{\'?]+)*@([a-z0-9_][-a-z0-9_]*(\.[-a-z0-9_]+)*\.(aero|arpa|biz|com|coop|edu|gov|info|int|io|mil|museum|name|net|org|pro|travel|mobi|[a-z][a-z])|([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}))(:[0-9]{1,5})?$/.test(emailAddress);
+}
 
-/**
- * Check if value for a field is empty.
- */
-function isEmpty(fieldValue) {
-            if (fieldValue.length == 0) {
-                console.log('field is empty');
-                return true;
-            }
-            return false;
-        }
+
